@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+<script type="module" src="index.html"></script>
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 
