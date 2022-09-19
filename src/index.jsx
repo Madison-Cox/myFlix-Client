@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import MainView from './components/main-view/main-view';
+import { MainView } from './components/main-view/main-view';
 <script type="module" src="index.html"></script>
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';

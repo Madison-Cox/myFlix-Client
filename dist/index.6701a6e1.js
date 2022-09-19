@@ -950,7 +950,7 @@ function _typeof(obj) {
 }
 var _react = _interopRequireDefault(require("react"));
 var _client = _interopRequireDefault(require("react-dom/client"));
-var _mainView = _interopRequireDefault(require("./components/main-view/main-view"));
+var _mainView = require("./components/main-view/main-view");
 require("./index.scss");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -1057,7 +1057,7 @@ var MyFlixApplication1 = /*#__PURE__*/ function(_React$Component) {
         {
             key: "render",
             value: function render() {
-                return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.default, {
+                return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
                     __source: {
                         fileName: "src/index.jsx",
                         lineNumber: 52
@@ -25403,7 +25403,7 @@ function _typeof(obj) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = void 0;
+exports.MainView = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
@@ -25537,19 +25537,11 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
             value: function render() {
                 var _this2 = this;
                 var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie;
-                if (selectedMovie) return(/*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                    movie: selectedMovie,
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 86
-                    },
-                    __self: this
-                }));
                 if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "main-view",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 87
+                        lineNumber: 86
                     },
                     __self: this,
                     children: "The list is empty!"
@@ -25558,7 +25550,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                     className: "main-view",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 88
+                        lineNumber: 87
                     },
                     __self: this,
                     children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25568,7 +25560,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 89
+                            lineNumber: 88
                         },
                         __self: this
                     }) : movies.map(function(movie) {
@@ -25579,7 +25571,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 92
+                                lineNumber: 91
                             },
                             __self: this
                         }, movie._id));
@@ -25589,9 +25581,8 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
         }
     ]);
     return MainView2;
-}(_react["default"].Component);
-var _default = MainView1;
-exports["default"] = _default;
+}(_react["default"].Component); //export default MainView;
+exports.MainView = MainView1;
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);
 } finally {
