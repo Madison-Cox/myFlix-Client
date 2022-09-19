@@ -25516,7 +25516,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                     _id: 3,
                     Title: 'Goodfellas',
                     Description: 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.',
-                    ImagePath: 'https://images.moviesanywhere.com/14389cf58dfa0aeeb9fae531ce4559a4/298e1118-a7d2-41a7-a22d-b927ab9d2a14.jpg'
+                    ImagePath: 'https://www.filmsite.org/posters/goodfellas.jpg'
                 }
             ],
             selectedMovie: null
