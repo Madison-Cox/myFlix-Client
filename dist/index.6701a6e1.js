@@ -25510,13 +25510,13 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                     _id: 2,
                     Title: 'Hook',
                     Description: 'When Captain James Hook kidnaps his children, an adult Peter Pan must return to Neverland and reclaim his youthful spirit in order to challenge his old enemy.',
-                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/0/0e/Hook_poster_transparent.png'
+                    ImagePath: 'https://i.ytimg.com/vi/BqzG17rxAkw/hqdefault.jpg'
                 },
                 {
                     _id: 3,
                     Title: 'Goodfellas',
                     Description: 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.',
-                    ImagePath: 'https://www.filmsite.org/posters/goodfellas.jpg'
+                    ImagePath: 'https://i.ytimg.com/vi/3yWyYhF1Ag0/movieposter_en.jpg'
                 }
             ],
             selectedMovie: null
