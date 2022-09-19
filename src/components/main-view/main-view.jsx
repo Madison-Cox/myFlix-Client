@@ -6,7 +6,7 @@ class MainView extends React.Component {
     super();
     this.state = {
       movies: [
-        { _id: 1, Title: 'Interstellar', Description: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.', ImagePath: 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg' },
+        { _id: 1, Title: 'Interstellar', Description: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.', ImagePath: 'https://i.ytimg.com/vi/uaSYEUugnzE/movieposter_en.jpg' },
         { _id: 2, Title: 'Hook', Description: 'When Captain James Hook kidnaps his children, an adult Peter Pan must return to Neverland and reclaim his youthful spirit in order to challenge his old enemy.', ImagePath: 'https://m.media-amazon.com/images/M/MV5BNmJjNTQzMjctMmE2NS00ZmYxLWE1NjYtYmRmNjNiMzljOTc3XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg' },
         { _id: 3, Title: 'Goodfellas', Description: 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.', ImagePath: 'https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg' },
       ],
