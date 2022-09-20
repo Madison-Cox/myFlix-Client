@@ -10,7 +10,7 @@ export class MainView extends React.Component {
       selectedMovie: null
     }
 
-    this.componentDidMount(){
+    componentDidMount(){
       axios.get('https://moviescoutdb.herokuapp.com/movies')
         .then(response => {
           this.setState({
