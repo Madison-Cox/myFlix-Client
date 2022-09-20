@@ -20,13 +20,13 @@ export class MainView extends React.Component {
         .catch(error => {
           console.log(error);
         });
-    }
+    };
 
     setSelectedMovie(newSelectedMovie) {
       this.setState({
         selectedMovie: newSelectedMovie
       });
-    }
+    };
 
     render() {
       const { movies, selectedMovie } = this.state;
