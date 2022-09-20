@@ -25538,8 +25538,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 86
                     },
-                    __self: this,
-                    children: "The list is empty!"
+                    __self: this
                 }));
                 return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "main-view",
