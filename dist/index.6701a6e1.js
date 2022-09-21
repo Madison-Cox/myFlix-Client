@@ -25515,7 +25515,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
             key: "componentDidMount",
             value: function componentDidMount() {
                 var _this2 = this;
-                _axios["default"].get('https://moviescoutdb.herokuapp.com/movies').then(function(response) {
+                _axios["default"].get('https://movie-scout.herokuapp.com/movies').then(function(response) {
                     _this2.setState({
                         movies: response.data
                     });
@@ -30933,6 +30933,7 @@ var MovieCard1 = /*#__PURE__*/ function(_React$Component) {
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Img, {
                             variant: "top",
+                            crossOrigin: "anonymous",
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
@@ -31267,6 +31268,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                crossOrigin: "anonymous",
                                 src: movie.ImagePath,
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
