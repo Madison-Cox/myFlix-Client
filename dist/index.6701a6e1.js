@@ -31267,7 +31267,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                crossorigin: "anonymous",
+                                crossOrigin: "anonymous",
                                 src: movie.ImagePath,
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
