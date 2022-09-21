@@ -3,3 +3,72 @@ $color: steelblue;
 .my-flix {
   color: $color;
 }
+
+.background {
+  background-color: #29468a;
+}
+
+
+.form-label {
+  font-size: larger;
+  text-decoration: underline;
+}
+
+img {
+  max-width: auto;
+  max-height: auto;
+}
+
+button {
+  border-radius: 8px;
+  background-color: black;
+  transition-duration: 0.4s;
+  color: white;
+}
+
+button:hover {
+  border-radius: 4px;
+  background-color: gray;
+  cursor: pointer;
+  ;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 667px;
+  max-height: auto;
+  color: #707171;
+}
+
+.movie-poster {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1667px;
+  max-height: auto;
+  color: gray;
+}
+
+.movie-title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  background-color: lightgray;
+  max-width: 667px;
+}
+
+.movie-description {
+  max-width: 667px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  background-color: lightgray;
+}
+
+.label {
+  font-weight: 500;
+}

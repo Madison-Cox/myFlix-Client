@@ -30974,7 +30974,7 @@ var MovieCard1 = /*#__PURE__*/ function(_React$Component) {
                                         lineNumber: 62
                                     },
                                     __self: this,
-                                    children: "Open"
+                                    children: "View"
                                 })
                             ]
                         })
@@ -31342,7 +31342,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                 lineNumber: 63
                             },
                             __self: this,
-                            children: "Back"
+                            children: "Back to list"
                         })
                     ]
                 }));
