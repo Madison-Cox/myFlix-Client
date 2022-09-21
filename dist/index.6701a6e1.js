@@ -28939,7 +28939,7 @@ function LoginView(props) {
                             lineNumber: 59
                         },
                         __self: this,
-                        children: "Username;"
+                        children: "Username:"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Control, {
                         type: "text",
