@@ -30933,6 +30933,7 @@ var MovieCard1 = /*#__PURE__*/ function(_React$Component) {
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Img, {
                             variant: "top",
+                            crossOrigin: "anonymous",
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
