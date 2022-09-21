@@ -30990,8 +30990,7 @@ MovieCard1.propTypes = {
         Title: _propTypes["default"].string.isRequired,
         Description: _propTypes["default"].string.isRequired,
         ImagePath: _propTypes["default"].string.isRequired
-    }),
-    isRequired: isRequired,
+    }).isRequired,
     onMovieClick: _propTypes["default"].func.isRequired
 };
 
