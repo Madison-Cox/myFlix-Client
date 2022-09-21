@@ -25515,7 +25515,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
             key: "componentDidMount",
             value: function componentDidMount() {
                 var _this2 = this;
-                _axios["default"].get('https://moviescoutdb.herokuapp.com/movies').then(function(response) {
+                _axios["default"].get('https://movie-scout.herokuapp.com/movies').then(function(response) {
                     _this2.setState({
                         movies: response.data
                     });
