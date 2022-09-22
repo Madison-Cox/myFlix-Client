@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Container, Form, Button, Card } from 'react-bootstrap';
+import { Row, Col, Container, Form, Button, Card, CardGroup } from 'react-bootstrap';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
