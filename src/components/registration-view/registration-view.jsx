@@ -19,7 +19,7 @@ export function Registration(props) {
   return (
     <Form>
       <Form.Group>
-        <Form.Label>Username:</Form.Label>
+        <Form.Label>Username</Form.Label>
         <Form.Control
           type='text'
           value={username}
@@ -28,30 +28,38 @@ export function Registration(props) {
           placeholder='Enter username' />
       </Form.Group>
 
-      <Label>Password:</Label>
+      <Form.Group>
+        <Form.Label>Password</Form.Label>
+        <Form.Control
+          type='password'
+          value={password}
+          onChange={e => setPassword(e.target.valule)}
+          required
+          minLength='8'
+        />
+      </Form.Group>
 
-      <input
-        type='password'
-        value={password}
-        onChange={e => setPassword(e.target.valule)} />
-
-      <label>
-        Email:
-        <input
+      <Form.Group>
+        <Form.Label>Email</Form.Label>
+        <Form.Control
           type='email'
           value={email}
-          onChange={e => setEmail(e.target.value)} />
-      </label>
+          onChange={e => setEmail(e.target.value)}
+        />
+      </Form.Group>
 
-      <label>
-        Birthday:
-        <input
+      <Form.Group>
+        <Form.Label>Birthday</Form.Label>
+        <Form.Control
           type='birthday'
           value={birthday}
-          onChange={e => setBirthday(e.target.value)} />
-      </label>
-
-      <button type='submit' onClick={handleSubmit}>Submit</button>
+          onChange={e => setBirthday(e.target.value)}
+        />
+      </Form.Group>
+      <button variant='primary' type='submit'
+        onClick={handleSubmit}>
+        Submit
+      </button>
     </Form>
   )
 }
