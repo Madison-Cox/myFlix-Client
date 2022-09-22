@@ -13,7 +13,7 @@ body {
 .form-label {
   font-size: larger;
   text-decoration: underline;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 img {
