@@ -52,7 +52,7 @@ export function Registration(props) {
       </label>
 
       <button type='submit' onClick={handleSubmit}>Submit</button>
-    </form>
+    </Form>
   )
 }
 
