@@ -21,9 +21,10 @@ export function LoginView(props) {
           <CardGroup>
             <Card>
               <Card.Body>
+                <Card.Title>Please Login</Card.Title>
                 <Form>
                   <Form.Group controlId='formUsername'>
-                    <Form.Label>Username:</Form.Label>
+                    <Form.Label>Username</Form.Label>
                     <Form.Control
                       type='text'
                       onChange={e => setUsername(e.target.value)}
@@ -33,11 +34,13 @@ export function LoginView(props) {
                   </Form.Group>
 
                   <Form.Group controlId='formPassword'>
-                    <Form.Label>Password:</Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Control
                       type='password'
-                      onChange={e => setPassword(e.target.value)}>
-                    </Form.Control>
+                      onChange={e => setPassword(e.target.value)}
+                      required
+                      placeholder='Enter Password'
+                    />
                   </Form.Group>
                   <Button variant='primary' type='submit'
                     onClick={handleSubmit}>
