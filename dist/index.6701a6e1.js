@@ -28935,7 +28935,7 @@ function LoginView(props) {
                     lineNumber: 57
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(CardGroup, {
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 58
