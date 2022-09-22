@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Form, Button } from 'react-bootstrap';
+
+import './registration-view.scss';
+import axios from 'axios';
 
 export function Registration(props) {
   const [username, setUsername] = useState('');
@@ -13,23 +17,40 @@ export function Registration(props) {
     props.Registration(username);
   };
   return (
-    <form>
-      <label>
-        Username:
-        <input type='text' value={username} onChange={e => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type='password' value={password} onChange={e => setPassword(e.target.valule)} />
-      </label>
+    <Form>
+      <Form.Group>
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
+          type='text'
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+          required
+          placeholder='Enter username' />
+      </Form.Group>
+
+      <Label>Password:</Label>
+
+      <input
+        type='password'
+        value={password}
+        onChange={e => setPassword(e.target.valule)} />
+
       <label>
         Email:
-        <input type='email' value={email} onChange={e => setEmail(e.target.value)} />
+        <input
+          type='email'
+          value={email}
+          onChange={e => setEmail(e.target.value)} />
       </label>
+
       <label>
         Birthday:
-        <input type='birthday' value={birthday} onChange={e => setBirthday(e.target.value)} />
+        <input
+          type='birthday'
+          value={birthday}
+          onChange={e => setBirthday(e.target.value)} />
       </label>
+
       <button type='submit' onClick={handleSubmit}>Submit</button>
     </form>
   )
