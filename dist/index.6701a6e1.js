@@ -28918,83 +28918,127 @@ function LoginView(props) {
         console.log(username, password);
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_Form.default, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Container, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
             lineNumber: 57
         },
         __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs(_Form.default.Group, {
-                controlId: "formUsername",
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Row, {
+            __source: {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 58
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(Col, {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 58
+                    lineNumber: 59
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Label, {
+                children: /*#__PURE__*/ _jsxRuntime.jsx(CardGroup, {
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 60
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(Card, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 59
+                            lineNumber: 61
                         },
                         __self: this,
-                        children: "Username:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Control, {
-                        type: "text",
-                        onChange: function(e) {
-                            return setUsername(e.target.value);
-                        },
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 60
-                        },
-                        __self: this
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(Card.Body, {
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 62
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_Form.default, {
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 63
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsxs(_Form.default.Group, {
+                                        controlId: "formUsername",
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 64
+                                        },
+                                        __self: this,
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Label, {
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 65
+                                                },
+                                                __self: this,
+                                                children: "Username:"
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Control, {
+                                                type: "text",
+                                                onChange: function(e) {
+                                                    return setUsername(e.target.value);
+                                                },
+                                                required: true,
+                                                placeholder: "Enter Username",
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 66
+                                                },
+                                                __self: this
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsxs(_Form.default.Group, {
+                                        controlId: "formPassword",
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 71
+                                        },
+                                        __self: this,
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Label, {
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 72
+                                                },
+                                                __self: this,
+                                                children: "Password:"
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Control, {
+                                                type: "password",
+                                                onChange: function(e) {
+                                                    return setPassword(e.target.value);
+                                                },
+                                                __source: {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 73
+                                                },
+                                                __self: this
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
+                                        variant: "primary",
+                                        type: "submit",
+                                        onClick: handleSubmit,
+                                        __source: {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 78
+                                        },
+                                        __self: this,
+                                        children: "Submit"
+                                    })
+                                ]
+                            })
+                        })
                     })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_Form.default.Group, {
-                controlId: "formPassword",
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 65
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Label, {
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 66
-                        },
-                        __self: this,
-                        children: "Password:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_Form.default.Control, {
-                        type: "password",
-                        onChange: function(e) {
-                            return setPassword(e.target.value);
-                        },
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 67
-                        },
-                        __self: this
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
-                variant: "primary",
-                type: "submit",
-                onClick: handleSubmit,
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 72
-                },
-                __self: this,
-                children: "Submit"
+                })
             })
-        ]
+        })
     }));
 }
 _c = LoginView;
