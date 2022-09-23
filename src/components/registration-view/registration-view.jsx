@@ -10,11 +10,52 @@ export function RegistrationView(props) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr('Username Required');
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr('Username must be atleast 5 characters long');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('Password Required');
+      isReq = false;
+    } else if (password.length < 6) {
+      setPassword('Password must be atleast 6 characters long');
+      isReq = false;
+    }
+
+    return isReq;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    props.onRegistration(username);
+    const isReq = validate();
+    if (isReq) {
+      axios.post('https://movie-scout.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday,
+      })
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+          alert('Registration Successful');
+
+          window.open('/', '_self');
+        })
+        .catch((response) => {
+          console.error(response);
+          alert('unable to register');
+        });
+    }
+
   };
 
   return (
@@ -33,6 +74,7 @@ export function RegistrationView(props) {
                     required
                     placeholder='Enter username'
                   />
+                  {usernameErr && <p>{usernameErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -45,6 +87,7 @@ export function RegistrationView(props) {
                     minLength='8'
                     placeholder='Enter Password'
                   />
+                  {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -80,5 +123,10 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
-  onRegistration: PropTypes.func.isRequired,
+  register: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired,
+  }),
 };
