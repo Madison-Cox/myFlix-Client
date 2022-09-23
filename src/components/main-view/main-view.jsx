@@ -7,6 +7,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { DirectorView } from '../director-view/director-view';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -75,7 +76,7 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user, registered } = this.state;
+    const { movies, selectedMovie, user, registered, Director, Genre } = this.state;
 
     return (
       <Router>
@@ -120,24 +121,24 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
-          <Route exact path='genres/:name' render={({ match, history }) => {
+          <Route exact path='/genre/:name' render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className='main-view' />;
 
             return <Col md={8}>
-              <GenreView director={movies.find(m => m.Director.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
+              <GenreView Genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 
-          <Route exact path='directors/:name' render={({ match, history }) => {
+          <Route exact path='/director/:name' render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className='main-view' />;
             return <Col md={8}>
-              <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
+              <DirectorView director={movies.find(m => m.Director.Name === match.params.name)} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 

@@ -25413,6 +25413,7 @@ var _registrationView = require("../registration-view/registration-view");
 var _loginView = require("../login-view/login-view");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
+var _directorView = require("../director-view/director-view");
 var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
 function _interopRequireDefault(obj) {
@@ -25585,11 +25586,11 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
             key: "render",
             value: function render() {
                 var _this3 = this;
-                var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, user = _this$state.user, registered = _this$state.registered;
+                var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, user = _this$state.user, registered = _this$state.registered, Director = _this$state.Director, Genre = _this$state.Genre;
                 return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 144
+                        lineNumber: 148
                     },
                     __self: this,
                     children: [
@@ -25597,7 +25598,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                             user: user,
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 145
+                                lineNumber: 149
                             },
                             __self: this
                         }),
@@ -25605,7 +25606,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                             className: "justify-content-md-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 146
+                                lineNumber: 150
                             },
                             __self: this,
                             children: [
@@ -25624,7 +25625,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 147
+                                        lineNumber: 151
                                     },
                                     __self: this
                                 }),
@@ -25653,7 +25654,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 155
+                                        lineNumber: 159
                                     },
                                     __self: this
                                 }),
@@ -25672,7 +25673,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 169
+                                        lineNumber: 173
                                     },
                                     __self: this
                                 }),
@@ -25704,13 +25705,13 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 176
+                                        lineNumber: 180
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                     exact: true,
-                                    path: "genres/:name",
+                                    path: "/genre/:name",
                                     render: function(_ref2) {
                                         var match = _ref2.match, history = _ref2.history;
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_Col.default, {
@@ -25726,8 +25727,8 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_Col.default, {
                                             md: 8,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(GenreView, {
-                                                director: movies.find(function(m) {
-                                                    return m.Director.Name === match.params.name;
+                                                Genre: movies.find(function(m) {
+                                                    return m.Genre.Name === match.params.name;
                                                 }).Genre,
                                                 onBackClick: function() {
                                                     return history.goBack();
@@ -25737,13 +25738,13 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 194
+                                        lineNumber: 198
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                     exact: true,
-                                    path: "directors/:name",
+                                    path: "/director/:name",
                                     render: function(_ref3) {
                                         var match = _ref3.match, history = _ref3.history;
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_Col.default, {
@@ -25758,10 +25759,10 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                         }));
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_Col.default, {
                                             md: 8,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(DirectorView, {
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
                                                 director: movies.find(function(m) {
                                                     return m.Director.Name === match.params.name;
-                                                }).Director,
+                                                }),
                                                 onBackClick: function() {
                                                     return history.goBack();
                                                 }
@@ -25770,7 +25771,7 @@ var MainView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 212
+                                        lineNumber: 216
                                     },
                                     __self: this
                                 })
@@ -25790,7 +25791,7 @@ exports.MainView = MainView1;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh","react-router-dom":"cpyQW","../navbar/navbar.jsx":"63yS7"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh","react-router-dom":"cpyQW","../navbar/navbar.jsx":"63yS7","../director-view/director-view":"ck15y"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -45360,7 +45361,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             ]
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: "/directors/".concat(movie.Director.Name, ".Name}"),
+                            to: "/director/".concat(movie.Director.Name, ".Name}"),
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
                                 lineNumber: 69
@@ -45377,7 +45378,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: "/genres/".concat(movie.Genre.Name),
+                            to: "/genre/".concat(movie.Genre.Name),
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
                                 lineNumber: 72
@@ -45552,6 +45553,221 @@ $RefreshReg$(_c, "MenuBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh"}],"jUTZ8":[function() {},{}]},["guISg","7smkB","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh"}],"ck15y":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f8cc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f8cc.prelude(module);
+
+try {
+var _jsxRuntime = require("react/jsx-runtime");
+"use strict";
+function _typeof(obj) {
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj1) {
+        return typeof obj1;
+    } : function(obj1) {
+        return obj1 && "function" == typeof Symbol && obj1.constructor === Symbol && obj1 !== Symbol.prototype ? "symbol" : typeof obj1;
+    }, _typeof(obj);
+}
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.DirectorView = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+require("./director-view.scss");
+var _Image = require("react-bootstrap/esm/Image");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+        writable: false
+    });
+    return Constructor;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function");
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            writable: true,
+            configurable: true
+        }
+    });
+    Object.defineProperty(subClass, "prototype", {
+        writable: false
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+}
+function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf1(o1, p1) {
+        o1.__proto__ = p1;
+        return o1;
+    };
+    return _setPrototypeOf(o, p);
+}
+function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+    return function _createSuperInternal() {
+        var Super = _getPrototypeOf(Derived), result;
+        if (hasNativeReflectConstruct) {
+            var NewTarget = _getPrototypeOf(this).constructor;
+            result = Reflect.construct(Super, arguments, NewTarget);
+        } else result = Super.apply(this, arguments);
+        return _possibleConstructorReturn(this, result);
+    };
+}
+function _possibleConstructorReturn(self, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) return call;
+    else if (call !== void 0) throw new TypeError("Derived constructors may only return object or undefined");
+    return _assertThisInitialized(self);
+}
+function _assertThisInitialized(self) {
+    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return self;
+}
+function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+        Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
+        }));
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf1(o1) {
+        return o1.__proto__ || Object.getPrototypeOf(o1);
+    };
+    return _getPrototypeOf(o);
+}
+var DirectorView1 = /*#__PURE__*/ function(_React$Component) {
+    _inherits(DirectorView2, _React$Component);
+    var _super = _createSuper(DirectorView2);
+    function DirectorView2() {
+        _classCallCheck(this, DirectorView2);
+        return _super.apply(this, arguments);
+    }
+    _createClass(DirectorView2, [
+        {
+            key: "render",
+            value: function render() {
+                var _this$props = this.props, Director = _this$props.Director, onBackClick = _this$props.onBackClick, movies = _this$props.movies, movie = _this$props.movie;
+                return(/*#__PURE__*/ _jsxRuntime.jsx(_Container.default, {
+                    __source: {
+                        fileName: "src/components/director-view/director-view.jsx",
+                        lineNumber: 65
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_Card.default, {
+                        className: "dir-view",
+                        __source: {
+                            fileName: "src/components/director-view/director-view.jsx",
+                            lineNumber: 66
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Header, {
+                                className: "dir-view-header",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 67
+                                },
+                                __self: this,
+                                children: "Director"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Body, {
+                                className: "dir-view-title",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 68
+                                },
+                                __self: this,
+                                children: Director.Director.Name
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_Card.default.Body, {
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 69
+                                },
+                                __self: this,
+                                children: [
+                                    "Birth: ",
+                                    Director.Director.Birth
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Body, {
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 70
+                                },
+                                __self: this,
+                                children: Director.Director.Bio
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Footer, {
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 71
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
+                                    className: "dir-view-button",
+                                    onClick: function() {
+                                        onBackClick();
+                                    },
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 72
+                                    },
+                                    __self: this,
+                                    children: "Back"
+                                })
+                            })
+                        ]
+                    })
+                }));
+            }
+        }
+    ]);
+    return DirectorView2;
+}(_react["default"].Component);
+exports.DirectorView = DirectorView1;
+DirectorView1.propTypes = {
+    Director: _propTypes["default"].shape({
+        Name: _propTypes["default"].string.isRequired,
+        Bio: _propTypes["default"].string.isRequired,
+        Birth: _propTypes["default"].number
+    }).isRequired
+};
+
+  $parcel$ReactRefreshHelpers$f8cc.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Card":"MoOk8","./director-view.scss":"hWS1b","react-bootstrap/esm/Image":"kKVYG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh"}],"hWS1b":[function() {},{}],"jUTZ8":[function() {},{}]},["guISg","7smkB","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
