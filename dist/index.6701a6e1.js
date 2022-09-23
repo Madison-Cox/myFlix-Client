@@ -45180,7 +45180,8 @@ exports.MovieView = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
-var _reactRouterDom = _interopRequireDefault(require("react-router-dom"));
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -45281,7 +45282,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                     className: "movie-view",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 55
+                        lineNumber: 57
                     },
                     __self: this,
                     children: [
@@ -45289,7 +45290,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             className: "movie-poster",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 56
+                                lineNumber: 58
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -45297,7 +45298,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                 src: movie.ImagePath,
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 57
+                                    lineNumber: 59
                                 },
                                 __self: this
                             })
@@ -45306,7 +45307,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             className: "movie-title",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 59
+                                lineNumber: 61
                             },
                             __self: this,
                             children: [
@@ -45314,7 +45315,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     className: "label",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 60
+                                        lineNumber: 62
                                     },
                                     __self: this,
                                     children: "Title: "
@@ -45323,7 +45324,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 61
+                                        lineNumber: 63
                                     },
                                     __self: this,
                                     children: movie.Title
@@ -45334,7 +45335,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             className: "movie-description",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 63
+                                lineNumber: 65
                             },
                             __self: this,
                             children: [
@@ -45342,7 +45343,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     className: "label",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 64
+                                        lineNumber: 66
                                     },
                                     __self: this,
                                     children: "Description: "
@@ -45351,42 +45352,42 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 65
+                                        lineNumber: 67
                                     },
                                     __self: this,
                                     children: movie.Description
                                 })
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.default, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                             to: "/directors/".concat(movie.Director.Name, ".Name}"),
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 67
+                                lineNumber: 69
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
                                 variant: "link",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 68
+                                    lineNumber: 70
                                 },
                                 __self: this,
                                 children: "Director"
                             })
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.default, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                             to: "/genres/".concat(movie.Genre.Name),
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 70
+                                lineNumber: 72
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
                                 variant: "link",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 71
+                                    lineNumber: 73
                                 },
                                 __self: this,
                                 children: "Genre"
@@ -45413,7 +45414,7 @@ MovieView1.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW"}],"63yS7":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"8EjAh","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-router-dom":"cpyQW","react-bootstrap/Card":"MoOk8"}],"63yS7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
