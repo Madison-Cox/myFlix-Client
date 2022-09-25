@@ -3,38 +3,36 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+
 export class MovieView extends React.Component {
 
   render() {
-    const { movie } = this.props;
+    const { movie, } = this.props;
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img crossOrigin="anonymous" src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <Link to={`/director/${movie.Director.Name}.Name}`}>
-          <Button variant='link'>Director</Button>
-        </Link>
-        <Link to={`/genre/${movie.Genre.Name}`}>
-          <Button variant='link'>Genre</Button>
-        </Link>
-      </div>
+      <Card>
+        <Card.Img variant='top' crossOrigin='anonymous' src={movie.ImagePath} />
+        <Card.Body>
+          <Card.Title>{movie.Title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/director/${movie.Director.Name}`}>
+            <Button variant='link'>Director</Button>
+          </Link>
+          <Link to={`/genre/${movie.Genre.Name}`}>
+            <Button variant='link'>Genre</Button>
+          </Link>
+          <Link to={`/`}>
+            <Button className='BackButton' variant='link'>Back</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     );
   }
 }
 
 MovieView.propTypes = {
   movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired,
+    Title: PropTypes.string,
     Description: PropTypes.string.isRequired,
     ImagePath: PropTypes.string.isRequired
   }).isRequired,

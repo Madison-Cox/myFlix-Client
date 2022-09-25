@@ -3,37 +3,33 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
-
+import { Link } from 'react-router-dom';
 import './director-view.scss';
-import { propTypes } from 'react-bootstrap/esm/Image';
+
 
 export class DirectorView extends React.Component {
   render() {
-    const { Director, onBackClick, movies, movie } = this.props;
+    const { director, movie, onBackClick } = this.props;
 
     return (
-      <Container>
-        <Card className='dir-view'>
-          <Card.Header className='dir-view-header'>Director</Card.Header>
-          <Card.Body className='dir-view-title'>{Director.Director.Name}</Card.Body>
-          <Card.Body>Birth: {Director.Director.Birth}</Card.Body>
-          <Card.Body>{Director.Director.Bio}</Card.Body>
-          <Card.Footer>
-            <Button className='dir-view-button'
-              onClick={() => {
-                onBackClick();
-              }}>Back</Button>
-          </Card.Footer>
-        </Card>
-      </Container>
+      <Card className='dir-view'>
+        <Card.Header className='dir-view-header'> {director.Director.Name} </Card.Header>
+        <Card.Body>Bio: {director.Director.Bio}</Card.Body>
+        <Card.Body>Birth: {director.Director.Birth}</Card.Body>
+        <Card.Footer>
+          <Link to={`/`}>
+            <Button variant='link'>Back</Button>
+          </Link>
+        </Card.Footer>
+      </Card>
     );
   }
 }
 
-DirectorView.propTypes = {
-  Director: PropTypes.shape({
+DirectorView.proptypes = {
+  director: PropTypes.shape({
     Name: PropTypes.string.isRequired,
     Bio: PropTypes.string.isRequired,
-    Birth: PropTypes.number,
+    Birth: PropTypes.number.isRequired
   }).isRequired,
 };
