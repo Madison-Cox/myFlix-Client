@@ -183,7 +183,7 @@ export class ProfileView extends React.Component {
                       )
                     }>
                     <Form.Group>
-                      <Form.Label>Username</Form.Label>
+                      <Form.Label>Username:</Form.Label>
                       <Form.Control
                         type='text'
                         name='Username'
@@ -193,7 +193,7 @@ export class ProfileView extends React.Component {
                       />
                     </Form.Group>
                     <Form.Group>
-                      <Form.Label>Password</Form.Label>
+                      <Form.Label>Password:</Form.Label>
                       <Form.Control
                         type='password'
                         name='password'
@@ -203,7 +203,7 @@ export class ProfileView extends React.Component {
                       />
                     </Form.Group>
                     <Form.Group>
-                      <Form.Label>Email</Form.Label>
+                      <Form.Label>Email:</Form.Label>
                       <Form.Control
                         type='email'
                         name='Email'
@@ -213,7 +213,7 @@ export class ProfileView extends React.Component {
                       />
                     </Form.Group>
                     <Form.Group>
-                      <Form.Label>Birthday</Form.Label>
+                      <Form.Label>Birthday:</Form.Label>
                       <Form.Control
                         type='date'
                         name='Birthday'
@@ -267,7 +267,7 @@ export class ProfileView extends React.Component {
   }
 }
 
-ProfileView.propTypes = {
+ProfileView.proptypes = {
   profile: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
