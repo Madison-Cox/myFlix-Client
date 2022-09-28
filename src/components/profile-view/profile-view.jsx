@@ -161,9 +161,9 @@ export class ProfileView extends React.Component {
               <Card.Header>User Profiles</Card.Header>
               <Card.Body>
                 <>
-                  <p>Username: {Username}</p>
-                  <p>Email: {Email}</p>
-                  <p>Birthday: {Birthday}</p>
+                  <Card.Text>Username: {Username}</Card.Text>
+                  <Card.Text>Email: {Email}</Card.Text>
+                  <Card.Text>Birthday: {Birthday}</Card.Text>
                 </>
               </Card.Body>
             </Card>
@@ -172,66 +172,64 @@ export class ProfileView extends React.Component {
             <Card className='update'>
               <Card.Header>Update Profile</Card.Header>
               <Card.Body>
-                <Card.Text>
-                  <Form className='update-form'
-                    onSubmit={(e) =>
-                      this.editUser(e,
-                        this.Username,
-                        this.Password,
-                        this.Email,
-                        this.Birthday
-                      )
-                    }>
-                    <Form.Group>
-                      <Form.Label>Username:</Form.Label>
-                      <Form.Control
-                        type='text'
-                        name='Username'
-                        placeholder='New Username'
-                        onChange={(e) => this.setUsername(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Password:</Form.Label>
-                      <Form.Control
-                        type='password'
-                        name='password'
-                        placeholder='New Password'
-                        onChange={(e) => this.setPassword(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Email:</Form.Label>
-                      <Form.Control
-                        type='email'
-                        name='Email'
-                        placeholder='New Email'
-                        onChange={(e) => this.setEmail(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Birthday:</Form.Label>
-                      <Form.Control
-                        type='date'
-                        name='Birthday'
-                        onChange={(e) => this.setBirthday(e.target.value)}
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Button
-                        variant='warning'
-                        type='submit'
-                        onClick={() => this.editUser()}>Update User</Button>
-                      <Button
-                        className='delete-button'
-                        variant='danger'
-                        onClick={() => this.onDeleteUser()}>Delete User</Button>
-                    </Form.Group>
-                  </Form>
-                </Card.Text>
+                <Form className='update-form'
+                  onSubmit={(e) =>
+                    this.editUser(e,
+                      this.Username,
+                      this.Password,
+                      this.Email,
+                      this.Birthday
+                    )
+                  }>
+                  <Form.Group>
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type='text'
+                      name='Username'
+                      placeholder='New Username'
+                      onChange={(e) => this.setUsername(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type='password'
+                      name='password'
+                      placeholder='New Password'
+                      onChange={(e) => this.setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control
+                      type='email'
+                      name='Email'
+                      placeholder='New Email'
+                      onChange={(e) => this.setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Birthday:</Form.Label>
+                    <Form.Control
+                      type='date'
+                      name='Birthday'
+                      onChange={(e) => this.setBirthday(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Button
+                      variant='warning'
+                      type='submit'
+                      onClick={() => this.editUser()}>Update User</Button>
+                    <Button
+                      className='delete-button'
+                      variant='danger'
+                      onClick={() => this.onDeleteUser()}>Delete User</Button>
+                  </Form.Group>
+                </Form>
               </Card.Body>
             </Card>
           </Col>
@@ -248,14 +246,14 @@ export class ProfileView extends React.Component {
                 return (
                   <Col key={_id} className='fav-movie'>
                     <Figure>
-                      <Link to={'/movies/${movie._id}'}>
+                      <Link to={'/movies/${movies._id}'}>
                         <Figure.Image src={imagePath} alt={Title} />
                         <Figure.Caption>{Title}</Figure.Caption>
                       </Link>
                     </Figure>
                     <Button className='remove'
                       variant='secondary'
-                      onClick={() => removeFav(movie._id)}>Remove from favorites</Button>
+                      onClick={() => removeFav(movies._id)}>Remove from favorites</Button>
                   </Col>
                 );
               })}
