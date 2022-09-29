@@ -3,11 +3,28 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 export class MovieView extends React.Component {
+  addFavorite() {
+    const { movie } = this.props;
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    axios.post(`https://movie-scout.herokuapp.com/users/${username}/movies/${movie._id}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+        console.log(response);
+        alert('Movie added from favorites.');
+        this.componentDidMount();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   render() {
-    const { movie, } = this.props;
+    const { movie } = this.props;
 
     return (
       <Card>
@@ -24,6 +41,7 @@ export class MovieView extends React.Component {
           <Link to={`/`}>
             <Button className='BackButton' variant='link'>Back</Button>
           </Link>
+          <Button variant='success' onClick={() => { this.addFavorite(movie._id, 'Add') }}>Add to favorites </Button>
         </Card.Body>
       </Card>
     );
