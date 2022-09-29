@@ -9,9 +9,13 @@ export class MovieView extends React.Component {
     const { movie } = this.props;
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
+    const url = `https://movie-scout.herokuapp.com/users/${username}/movies/${movie._id}`;
+    console.log(token);
 
-    axios.post(`https://movie-scout.herokuapp.com/users/${username}/movies/${movie._id}`, {
-      headers: { Authorization: `Bearer ${token}` }
+    axios.post(url, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     })
       .then((response) => {
         console.log(response);

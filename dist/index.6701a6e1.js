@@ -45540,7 +45540,9 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                 var movie = this.props.movie;
                 var username = localStorage.getItem('user');
                 var token = localStorage.getItem('token');
-                _axios["default"].post("https://movie-scout.herokuapp.com/users/".concat(username, "/movies/").concat(movie._id), {
+                var url = "https://movie-scout.herokuapp.com/users/".concat(username, "/movies/").concat(movie._id);
+                console.log(token);
+                _axios["default"].post(url, {
                     headers: {
                         Authorization: "Bearer ".concat(token)
                     }
@@ -45561,7 +45563,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                 return(/*#__PURE__*/ _jsxRuntime.jsxs(_Card.default, {
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 83
+                        lineNumber: 85
                     },
                     __self: this,
                     children: [
@@ -45571,21 +45573,21 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 84
+                                lineNumber: 86
                             },
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsxs(_Card.default.Body, {
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 85
+                                lineNumber: 87
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Title, {
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 86
+                                        lineNumber: 88
                                     },
                                     __self: this,
                                     children: movie.Title
@@ -45593,7 +45595,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_Card.default.Text, {
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 87
+                                        lineNumber: 89
                                     },
                                     __self: this,
                                     children: movie.Description
@@ -45602,14 +45604,14 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     to: "/director/".concat(movie.Director.Name),
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 88
+                                        lineNumber: 90
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
                                         variant: "link",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 89
+                                            lineNumber: 91
                                         },
                                         __self: this,
                                         children: "Director"
@@ -45619,14 +45621,14 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     to: "/genre/".concat(movie.Genre.Name),
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 91
+                                        lineNumber: 93
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
                                         variant: "link",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 92
+                                            lineNumber: 94
                                         },
                                         __self: this,
                                         children: "Genre"
@@ -45636,7 +45638,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     to: "/",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 94
+                                        lineNumber: 96
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_Button.default, {
@@ -45644,7 +45646,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                         variant: "link",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 95
+                                            lineNumber: 97
                                         },
                                         __self: this,
                                         children: "Back"
@@ -45657,7 +45659,7 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
                                     },
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 97
+                                        lineNumber: 99
                                     },
                                     __self: this,
                                     children: "Add to favorites "
@@ -46621,7 +46623,7 @@ var UpdateView1 = /*#__PURE__*/ function(_React$Component) {
             });
         });
         _defineProperty(_assertThisInitialized(_this), "editUser", function(e) {
-            event.preventDefault();
+            e.preventDefault();
             var token = localStorage.getItem('token');
             _axios["default"].put('https://movie-scout.herokuapp.com/users/${Username}', {
                 Username: _this.state.Username,
@@ -47010,8 +47012,7 @@ function FavoriteMovies(_ref) {
                         lineNumber: 43
                     },
                     __self: this,
-                    children: favoriteMovieList.map(function(_ref2) {
-                        var ImagePath = _ref2.ImagePath, Title = _ref2.Title, _id = _ref2._id;
+                    children: favoriteMovieList === null || favoriteMovieList === void 0 ? void 0 : favoriteMovieList.map(function(mList) {
                         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 12,
                             md: 6,
@@ -47019,40 +47020,40 @@ function FavoriteMovies(_ref) {
                             className: "fav-movie",
                             __source: {
                                 fileName: "src/components/profile-view/favorite-movies.jsx",
-                                lineNumber: 48
+                                lineNumber: 45
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Figure, {
                                     __source: {
                                         fileName: "src/components/profile-view/favorite-movies.jsx",
-                                        lineNumber: 49
+                                        lineNumber: 46
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
-                                        to: "/movies/".concat(_id),
+                                        to: "/movies/".concat(mList._id),
                                         __source: {
                                             fileName: "src/components/profile-view/favorite-movies.jsx",
-                                            lineNumber: 50
+                                            lineNumber: 47
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Figure.Image, {
-                                                src: ImagePath,
-                                                alt: Title,
+                                                src: mList.ImagePath,
+                                                alt: mList.Title,
                                                 __source: {
                                                     fileName: "src/components/profile-view/favorite-movies.jsx",
-                                                    lineNumber: 51
+                                                    lineNumber: 48
                                                 },
                                                 __self: this
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Figure.Caption, {
                                                 __source: {
                                                     fileName: "src/components/profile-view/favorite-movies.jsx",
-                                                    lineNumber: 52
+                                                    lineNumber: 49
                                                 },
                                                 __self: this,
-                                                children: Title
+                                                children: mList.Title
                                             })
                                         ]
                                     })
@@ -47060,17 +47061,17 @@ function FavoriteMovies(_ref) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                     variant: "secondary",
                                     onClick: function() {
-                                        return removeFav(_id);
+                                        return removeFav(mList._id);
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/favorite-movies.jsx",
-                                        lineNumber: 57
+                                        lineNumber: 54
                                     },
                                     __self: this,
                                     children: "Remove"
                                 })
                             ]
-                        }, _id));
+                        }, mList._id));
                     })
                 })
             ]
