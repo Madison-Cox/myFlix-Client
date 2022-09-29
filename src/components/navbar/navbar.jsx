@@ -31,9 +31,7 @@ export function MenuBar({ user }) {
               >{user}</Nav.Link>
             )}
             {isAuth() && (
-              <Button variant='link' onClick={() => {
-                this.onLoggedOut()
-              }}>Logout</Button>
+              <Button variant='link' onClick={onLoggedOut}>Logout</Button>
             )}
             {!isAuth() && (
               <Nav.Link href='/'>Sign-In</Nav.Link>
