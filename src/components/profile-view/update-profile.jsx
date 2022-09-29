@@ -24,7 +24,7 @@ export class UpdateView extends React.Component {
   };
 
   editUser = (e) => {
-    event.preventDefault();
+    e.preventDefault();
     const token = localStorage.getItem('token');
     axios.put('https://movie-scout.herokuapp.com/users/${Username}', {
       Username: this.state.Username,

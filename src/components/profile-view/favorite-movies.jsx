@@ -24,21 +24,21 @@ export function FavoriteMovies({ favoriteMovieList }) {
           </Col>
         </Row>
         <Row>
-          {favoriteMovieList.map(({ ImagePath, Title, _id }) => {
+          {favoriteMovieList?.map((mList) => {
             return (
-              <Col xs={12} md={6} lg={3} key={_id} className='fav-movie'>
+              <Col xs={12} md={6} lg={3} key={mList._id} className='fav-movie'>
                 <Figure>
-                  <Link to={`/movies/${_id}`}>
+                  <Link to={`/movies/${mList._id}`}>
                     <Figure.Image
-                      src={ImagePath}
-                      alt={Title}
+                      src={mList.ImagePath}
+                      alt={mList.Title}
                     />
                     <Figure.Caption>
-                      {Title}
+                      {mList.Title}
                     </Figure.Caption>
                   </Link>
                 </Figure>
-                <Button variant='secondary' onClick={() => removeFav(_id)}>Remove</Button>
+                <Button variant='secondary' onClick={() => removeFav(mList._id)}>Remove</Button>
               </Col>
             )
           })
