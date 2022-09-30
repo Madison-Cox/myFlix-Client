@@ -51,38 +51,6 @@ export class ProfileView extends React.Component {
       });
   };
 
-  editUser = (e) => {
-    e.preventDefault();
-    const token = localStorage.getItem('token');
-    axios.put('https://movie-scout.herokuapp.com/users/${Username}', {
-      Username: this.state.Username,
-      Password: this.state.Password,
-      Email: this.state.Email,
-      Birthday: this.state.Birthday,
-    },
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday,
-        });
-
-        localStorage.setItem('user', this.state.Username);
-        const data = response.data;
-        console.log(data);
-        console.log(this.state.Username);
-        alert('Profile is updated');
-        window.open('/users/${Username}', '_self');
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
   onDeleteUser() {
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -143,10 +111,10 @@ export class ProfileView extends React.Component {
             <Link to={'/'}>
               <Button variant='link'>Back</Button>
             </Link>
-            <Link to={'/users/:username/update'}>
+            <Link to={`/users/${Username}/update`}>
               <Button variant='link'>Update Profile</Button>
             </Link>
-            <Link to={'/users/:username/favoritemovies'}>
+            <Link to={`/users/${Username}/favoritemovies`}>
               <button variant='link' >Favorite Movies</button>
             </Link>
           </Card.Footer>

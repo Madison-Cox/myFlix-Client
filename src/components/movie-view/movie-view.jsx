@@ -5,22 +5,47 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 export class MovieView extends React.Component {
-  addFavorite() {
-    const { movie } = this.props;
-    const username = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    const url = `https://movie-scout.herokuapp.com/users/${username}/movies/${movie._id}`;
-    console.log(token, url);
 
-    axios.post(url, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
+  getMovies(token) {
+    axios.get('https://movie-scout.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` }
     })
+      .then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  addFavorite = (e) => {
+    event.preventDefault();
+    const token = localStorage.getItem('token');
+    const { movie } = this.props;
+    axios.post(`https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}/movies/${movie._id}`, {
+      FavoriteMovies: this.state.MovieID
+    },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      })
       .then((response) => {
-        console.log(response);
+        const data = response.data;
+        console.log(data);
         alert('Movie added from favorites.');
-        this.componentDidMount();
       })
       .catch(function (error) {
         console.log(error);

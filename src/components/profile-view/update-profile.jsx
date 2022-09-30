@@ -26,15 +26,15 @@ export class UpdateView extends React.Component {
   editUser = (e) => {
     event.preventDefault();
     const token = localStorage.getItem('token');
-    const url = `https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}`
-    axios.put(url, {
+    const Username = localStorage.getItem('user');
+    axios.put(`https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}`, {
       Username: this.state.Username,
       Password: this.state.Password,
       Email: this.state.Email,
       Birthday: this.state.Birthday,
     },
       {
-        headers: { Authorization: 'Bearer ' + token },
+        headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
 
@@ -42,7 +42,6 @@ export class UpdateView extends React.Component {
         localStorage.setItem('user', this.state.Username);
         const data = response.data;
         console.log(data);
-        console.log(this.state.Username);
         alert('Profile is updated!');
         window.open(`/users/${Username}`, '_self');
       })
