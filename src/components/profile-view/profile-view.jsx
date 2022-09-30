@@ -5,18 +5,6 @@ import { Button, Container, Card } from 'react-bootstrap';
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      Username: localStorage.getItem('user'),
-      Password: null,
-      Email: null,
-      Birthday: null,
-      FavoriteMovies: [],
-      movies: [],
-    };
-  }
-
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
     this.getUser(accessToken);
@@ -70,53 +58,27 @@ export class ProfileView extends React.Component {
       });
   }
 
-  setUsername(value) {
-    this.setState({
-      Username: value,
-    });
-    this.Username = value;
-  }
-
-  setPassword(value) {
-    this.setState({
-      Password: value,
-    });
-    this.Password = value;
-  }
-
-  setEmail(value) {
-    this.setState({
-      Email: value,
-    });
-    this.Email = value;
-  }
-
-  setBirthday(value) {
-    this.setState({
-      Birthday: value,
-    });
-    this.Birthday = value;
-  }
-
   render() {
-    const { user, Birthday, FavoriteMovies, Email } = this.props;
-    const Username = localStorage.getItem('user')
+    const { user, birthday, email, favoriteMovies } = localStorage;
     return (
       <Container>
         <Card className='profile-view'>
-          <Card.Body>Username: {Username}</Card.Body>
-          <Card.Body>Email: {Email}</Card.Body>
-          <Card.Body>Birthday: {Birthday}</Card.Body>
+          <Card.Body>Username: {user}</Card.Body>
+          <Card.Body>Email: {email}</Card.Body>
+          <Card.Body>Birthday: {birthday.toString("MM/dd/yyyy")}</Card.Body>
           <Card.Footer>
             <Link to={'/'}>
               <Button variant='link'>Back</Button>
             </Link>
-            <Link to={`/users/${Username}/update`}>
+            <Link to={`/users/${user}/update`}>
               <Button variant='link'>Update Profile</Button>
             </Link>
-            <Link to={`/users/${Username}/favoritemovies`}>
+            <Link to={`/users/${user}/favoritemovies`}>
               <button variant='link' >Favorite Movies</button>
             </Link>
+            {!favoriteMovies ? <div> No Favorite Movies </div> : favoriteMovies?.split(',').map((movie) => {
+              <div>movie</div>
+            })}
           </Card.Footer>
         </Card>
 

@@ -22,14 +22,15 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      user: null
+      user: null,
+      favoriteMovies: [],
     };
   }
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
-        user: localStorage.getItem('user')
+        user: localStorage.getItem('user'),
       });
       this.getMovies(accessToken);
     }
@@ -42,12 +43,20 @@ export class MainView extends React.Component {
   }
 
   onLoggedIn(authData) {
+    const { Username, Email, Birthday, FavoriteMovies } = authData.user;
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username,
+      email: Email,
+      birthday: Birthday,
+      favoriteMovies: FavoriteMovies || [],
+      username: Username,
     });
     localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.Username);
+    localStorage.setItem('user', Username);
+    localStorage.setItem('birthday', Birthday);
+    localStorage.setItem('email', Email);
+    localStorage.setItem('favoriteMovies', FavoriteMovies || []);
     this.getMovies(authData.token);
   }
 
@@ -164,7 +173,7 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
               </Col>)
               return (<Col md={8}>
-                <FavoriteMovies />
+                <FavoriteMovies user={user} />
               </Col>)
             }} />
           </Switch>
