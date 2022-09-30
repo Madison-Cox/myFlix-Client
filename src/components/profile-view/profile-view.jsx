@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Form, Button, Container, Row, Col, Card, Figure } from 'react-bootstrap';
+import { Button, Container, Card } from 'react-bootstrap';
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
@@ -141,14 +140,14 @@ export class ProfileView extends React.Component {
           <Card.Body>Email: {Email}</Card.Body>
           <Card.Body>Birthday: {Birthday}</Card.Body>
           <Card.Footer>
-            <Link to={`/`}>
+            <Link to={'/'}>
               <Button variant='link'>Back</Button>
             </Link>
             <Link to={'/users/:username/update'}>
               <Button variant='link'>Update Profile</Button>
             </Link>
             <Link to={'/users/:username/favoritemovies'}>
-              <Button variant='link'>Favorite Movies</Button>
+              <button variant='link' >Favorite Movies</button>
             </Link>
           </Card.Footer>
         </Card>

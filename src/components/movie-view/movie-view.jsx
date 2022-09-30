@@ -10,7 +10,7 @@ export class MovieView extends React.Component {
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
     const url = `https://movie-scout.herokuapp.com/users/${username}/movies/${movie._id}`;
-    console.log(token);
+    console.log(token, url);
 
     axios.post(url, {
       headers: {
