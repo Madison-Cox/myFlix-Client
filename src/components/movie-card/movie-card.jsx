@@ -4,9 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+
 export class MovieCard extends React.Component {
-
-
   getUser = (token) => {
     const Username = localStorage.getItem('user');
     axios.get('https://movie-scout.herokuapp.com/users/${Username}', {

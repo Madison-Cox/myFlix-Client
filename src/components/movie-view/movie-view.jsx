@@ -43,6 +43,11 @@ export class MovieView extends React.Component {
         },
       })
       .then((response) => {
+        localStorage.setItem('user', user);
+        if (localStorage.favoriteMovies.includes(movie._id)) { //do nothing
+        } else if (localStorage.favoriteMovies.length > 0) {
+          localStorage.setItem('favoriteMovies', `${localStorage.favoriteMovies}, ${movie._id}`);
+        } else { localStorage.setItem('favoriteMovies', `${movie._id},`); }
         const data = response.data;
         console.log(data);
         alert('Movie added from favorites.');
