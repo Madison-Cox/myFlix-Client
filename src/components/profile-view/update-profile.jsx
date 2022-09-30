@@ -7,7 +7,7 @@ import { Col, Container, Button, Card, Row, Form } from 'react-bootstrap';
 export class UpdateView extends React.Component {
 
   getUser = (token) => {
-    axios.get('https://movie-scout.herokuapp.com/users/${Username}', {
+    axios.get(`https://movie-scout.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
@@ -24,16 +24,17 @@ export class UpdateView extends React.Component {
   };
 
   editUser = (e) => {
-    e.preventDefault();
+    event.preventDefault();
     const token = localStorage.getItem('token');
-    axios.put('https://movie-scout.herokuapp.com/users/${Username}', {
+    const url = `https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}`
+    axios.put(url, {
       Username: this.state.Username,
       Password: this.state.Password,
       Email: this.state.Email,
       Birthday: this.state.Birthday,
     },
       {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: 'Bearer ' + token },
       })
       .then((response) => {
 
@@ -43,7 +44,7 @@ export class UpdateView extends React.Component {
         console.log(data);
         console.log(this.state.Username);
         alert('Profile is updated!');
-        window.open('/users/${Username}', '_self');
+        window.open(`/users/${Username}`, '_self');
       })
       .catch(function (error) {
         console.log(error);
@@ -53,7 +54,7 @@ export class UpdateView extends React.Component {
   onDeleteUser() {
     const token = localStorage.getItem('token');
 
-    axios.delete('https://movie-scout.herokuapp.com/users/${Username}', {
+    axios.delete(`https://movie-scout.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
