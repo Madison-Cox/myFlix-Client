@@ -49,14 +49,14 @@ export class MainView extends React.Component {
       user: authData.user.Username,
       email: Email,
       birthday: Birthday,
-      favoriteMovies: FavoriteMovies || [],
+      favoriteMovies: FavoriteMovies,
       username: Username,
     });
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', Username);
     localStorage.setItem('birthday', Birthday);
     localStorage.setItem('email', Email);
-    localStorage.setItem('favoriteMovies', FavoriteMovies || []);
+    localStorage.setItem('favoriteMovies', FavoriteMovies);
     this.getMovies(authData.token);
   }
 

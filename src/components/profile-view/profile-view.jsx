@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button, Container, Card } from 'react-bootstrap';
+import FavoriteMovies from './favorite-movies';
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
@@ -56,16 +57,32 @@ export class ProfileView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
+  };
+
+  getMovieTitle() {
+    const favoriteMovies = localStorage.getItem('favoriteMovies');
+
+    axios.get('https://movie-scout.herokuapp.com/movies/${movie._id}', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   render() {
     const { user, birthday, email, favoriteMovies } = localStorage;
+
     return (
       <Container>
+
         <Card className='profile-view'>
           <Card.Body>Username: {user}</Card.Body>
           <Card.Body>Email: {email}</Card.Body>
           <Card.Body>Birthday: {birthday.toString("MM/dd/yyyy")}</Card.Body>
+          <Card.Body>Favorite Movies: {favoriteMovies}
+          </Card.Body>
+
           <Card.Footer>
             <Link to={'/'}>
               <Button variant='link'>Back</Button>
@@ -76,9 +93,6 @@ export class ProfileView extends React.Component {
             <Link to={`/users/${user}/favoritemovies`}>
               <button variant='link' >Favorite Movies</button>
             </Link>
-            {!favoriteMovies ? <div> No Favorite Movies </div> : favoriteMovies?.split(',').map((movie) => {
-              <div>movie</div>
-            })}
           </Card.Footer>
         </Card>
 
