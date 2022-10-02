@@ -65,6 +65,9 @@ export class ProfileView extends React.Component {
     axios.get('https://movie-scout.herokuapp.com/movies/${movie._id}', {
       headers: { Authorization: `Bearer ${token}` },
     })
+      .then((Title) => {
+        console.log(Title);
+      })
       .catch(function (error) {
         console.log(error);
       });
