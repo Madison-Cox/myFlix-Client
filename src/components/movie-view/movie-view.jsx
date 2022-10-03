@@ -63,20 +63,20 @@ export class MovieView extends React.Component {
         if (!localStorage.favList.includes(movie.Title)) { //do nothing
         } else {
           let array = localStorage.favList.replace(movie.Title, '').split(',');
-          var filtered = array.filter(function (el) {
-            return (el != null || el != "");
+          var cleaned = array.filter(function (el) {
+            if (el != null && el != " ") return el.trim();
           });
           let newString = "";
-
-          for (let i = 0; i < filtered.length; i++) {
+          for (let i = 0; i < cleaned.length; i++) {
             if (i == 0) {
-              newString = filtered[i].toString();
+              newString = cleaned[i].toString();
             } else {
-              newString = `${newString}, ${filtered[i]}`;
+              newString = `${newString}, ${cleaned[i]}`;
             }
           }
 
           localStorage.setItem('favList', newString);
+          alert('Movie removed from favorites.');
         }
       })
       .catch(function (error) {
