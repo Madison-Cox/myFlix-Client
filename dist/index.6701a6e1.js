@@ -46359,11 +46359,9 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
         {
             key: "onDeleteUser",
             value: function onDeleteUser() {
-                var Username = localStorage.getItem('user');
-                var token = localStorage.getItem('token');
-                _axios["default"]["delete"]("https://movie-scout.herokuapp.com/users/".concat(Username), {
+                _axios["default"]["delete"]("https://movie-scout.herokuapp.com/users/".concat(localStorage.getItem('user')), {
                     headers: {
-                        Authorization: "Bearer ".concat(token)
+                        Authorization: "Bearer ".concat(localStorage.getItem('token'))
                     }
                 }).then(function(response) {
                     console.log(response);
@@ -46390,21 +46388,21 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                 return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 114
+                        lineNumber: 111
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                         className: "profile-view",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 116
+                            lineNumber: 113
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 117
+                                    lineNumber: 114
                                 },
                                 __self: this,
                                 children: [
@@ -46415,7 +46413,7 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 118
+                                    lineNumber: 115
                                 },
                                 __self: this,
                                 children: [
@@ -46426,7 +46424,7 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 119
+                                    lineNumber: 116
                                 },
                                 __self: this,
                                 children: [
@@ -46437,7 +46435,7 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 120
+                                    lineNumber: 117
                                 },
                                 __self: this,
                                 children: [
@@ -46448,12 +46446,29 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Footer, {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 123
+                                    lineNumber: 120
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: '/',
+                                        __source: {
+                                            fileName: "src/components/profile-view/profile-view.jsx",
+                                            lineNumber: 121
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                            variant: "link",
+                                            __source: {
+                                                fileName: "src/components/profile-view/profile-view.jsx",
+                                                lineNumber: 122
+                                            },
+                                            __self: this,
+                                            children: "Back"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: "/users/".concat(user, "/update"),
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 124
@@ -46464,23 +46479,6 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                                             __source: {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
                                                 lineNumber: 125
-                                            },
-                                            __self: this,
-                                            children: "Back"
-                                        })
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: "/users/".concat(user, "/update"),
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 127
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                            variant: "link",
-                                            __source: {
-                                                fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 128
                                             },
                                             __self: this,
                                             children: "Update Profile"
