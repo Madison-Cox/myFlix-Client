@@ -11,7 +11,6 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { UpdateView } from '../profile-view/update-profile';
-import { FavoriteMovies } from '../profile-view/favorite-movies';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -196,15 +195,6 @@ export class MainView extends React.Component {
               </Col>)
               return (<Col md={8}>
                 <UpdateView />
-              </Col>)
-            }} />
-
-            <Route exact path='/users/:username/favoritemovies' render={() => {
-              if (!user) return (<Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-              </Col>)
-              return (<Col md={8}>
-                <FavoriteMovies user={user} />
               </Col>)
             }} />
           </Switch>

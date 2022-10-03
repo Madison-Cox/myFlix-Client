@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button, Container, Card } from 'react-bootstrap';
-import FavoriteMovies from './favorite-movies';
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
@@ -33,7 +32,7 @@ export class ProfileView extends React.Component {
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
-    axios.delete('https://movie-scout.herokuapp.com/users/${Username}', {
+    axios.delete(`https://movie-scout.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
@@ -48,6 +47,11 @@ export class ProfileView extends React.Component {
       });
   };
 
+  stringifyDate(birthday) {
+    const date = new Date(birthday);
+    return date.toDateString("MM/DD/YYYY");
+  }
+
   render() {
     const { user, birthday, email, favList } = localStorage;
     return (
@@ -56,7 +60,7 @@ export class ProfileView extends React.Component {
         <Card className='profile-view'>
           <Card.Body>Username: {user}</Card.Body>
           <Card.Body>Email: {email}</Card.Body>
-          <Card.Body>Birthday: {birthday.toString("MM/dd/yyyy")}</Card.Body>
+          <Card.Body>Birthday: {this.stringifyDate(birthday)}</Card.Body>
           <Card.Body>Favorite Movies: {favList}
           </Card.Body>
 
@@ -66,9 +70,6 @@ export class ProfileView extends React.Component {
             </Link>
             <Link to={`/users/${user}/update`}>
               <Button variant='link'>Update Profile</Button>
-            </Link>
-            <Link to={`/users/${user}/favoritemovies`}>
-              <button variant='link' >Favorite Movies</button>
             </Link>
           </Card.Footer>
         </Card>

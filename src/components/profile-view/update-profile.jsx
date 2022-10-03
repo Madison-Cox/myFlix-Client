@@ -26,7 +26,6 @@ export class UpdateView extends React.Component {
   editUser = (e) => {
     event.preventDefault();
     const token = localStorage.getItem('token');
-    const Username = localStorage.getItem('user');
     axios.put(`https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}`, {
       Username: this.state.Username,
       Password: this.state.Password,
@@ -40,6 +39,8 @@ export class UpdateView extends React.Component {
 
 
         localStorage.setItem('user', this.state.Username);
+        localStorage.setItem('birthday', this.state.Birthday);
+        localStorage.setItem('email', this.state.Email);
         const data = response.data;
         console.log(data);
         alert('Profile is updated!');
@@ -52,10 +53,11 @@ export class UpdateView extends React.Component {
 
   onDeleteUser() {
     const token = localStorage.getItem('token');
-
-    axios.delete(`https://movie-scout.herokuapp.com/users/${Username}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    const Username = localStorage.getItem('user');
+    axios.delete(`https://movie-scout.herokuapp.com/users/${Username}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => {
         console.log(response);
         alert('Profile Deleted');
