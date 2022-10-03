@@ -6,28 +6,17 @@ import FavoriteMovies from './favorite-movies';
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      Title: "No Favorite Movies"
+    };
+  }
+
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
     this.getUser(accessToken);
   }
-
-  onRemoveFavorite = (e, movie) => {
-    const username = localStorage.getItem('user');
-    console.log(username);
-    const token = localStorage.getItem('token');
-    console.log(this.props);
-    axios.delete('https://movie-scout.herokuapp.com/users/${Username}/Movies/${movie._id}', {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then((response) => {
-        console.log(response);
-        alert('Movie removed from favorites.');
-        this.componentDidMount();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
 
   getUser = (token) => {
     const Username = localStorage.getItem('user');
@@ -59,23 +48,8 @@ export class ProfileView extends React.Component {
       });
   };
 
-  getMovieTitle() {
-    const favoriteMovies = localStorage.getItem('favoriteMovies');
-
-    axios.get('https://movie-scout.herokuapp.com/movies/${movie._id}', {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((Title) => {
-        console.log(Title);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
   render() {
-    const { user, birthday, email, favoriteMovies } = localStorage;
-
+    const { user, birthday, email, favList } = localStorage;
     return (
       <Container>
 
@@ -83,7 +57,7 @@ export class ProfileView extends React.Component {
           <Card.Body>Username: {user}</Card.Body>
           <Card.Body>Email: {email}</Card.Body>
           <Card.Body>Birthday: {birthday.toString("MM/dd/yyyy")}</Card.Body>
-          <Card.Body>Favorite Movies: {favoriteMovies}
+          <Card.Body>Favorite Movies: {favList}
           </Card.Body>
 
           <Card.Footer>

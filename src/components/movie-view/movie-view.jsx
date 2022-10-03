@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -30,27 +30,54 @@ export class MovieView extends React.Component {
       });
   }
 
-  addFavorite = (e) => {
-    event.preventDefault();
-    const token = localStorage.getItem('token');
+  addFavorite = () => {
     const { movie } = this.props;
     axios.post(`https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}/movies/${movie._id}`, {
       FavoriteMovies: this.state.MovieID
     },
       {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${localStorage.getItem('token')}`
         },
       })
       .then((response) => {
-        localStorage.setItem('user', user);
-        if (localStorage.favoriteMovies.includes(movie._id)) { //do nothing
-        } else if (localStorage.favoriteMovies.length > 0) {
-          localStorage.setItem('favoriteMovies', `${localStorage.favoriteMovies}, ${movie._id}`);
-        } else { localStorage.setItem('favoriteMovies', `${movie._id},`); }
+        if (localStorage.favList.includes(movie.Title)) { //do nothing
+        } else if (localStorage.favList.length > 0) {
+          localStorage.setItem('favList', `${localStorage.favList}, ${movie.Title}`);
+        } else { localStorage.setItem('favList', `${movie.Title}`); }
         const data = response.data;
         console.log(data);
         alert('Movie added from favorites.');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  onRemoveFavorite = () => {
+    const { movie } = this.props;
+    axios.delete(`https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}/Movies/${movie._id}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+      .then(() => {
+        if (!localStorage.favList.includes(movie.Title)) { //do nothing
+        } else {
+          let array = localStorage.favList.replace(movie.Title, '').split(',');
+          var filtered = array.filter(function (el) {
+            return (el != null || el != "");
+          });
+          let newString = "";
+
+          for (let i = 0; i < filtered.length; i++) {
+            if (i == 0) {
+              newString = filtered[i].toString();
+            } else {
+              newString = `${newString}, ${filtered[i]}`;
+            }
+          }
+
+          localStorage.setItem('favList', newString);
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -75,7 +102,15 @@ export class MovieView extends React.Component {
           <Link to={`/`}>
             <Button className='BackButton' variant='link'>Back</Button>
           </Link>
-          <Button variant='success' onClick={() => { this.addFavorite(movie._id, 'Add') }}>Add to favorites </Button>
+          {
+            localStorage.getItem('favList').includes(movie.Title) ?
+              <Button variant='danger' onClick={() => { this.onRemoveFavorite(movie._id, 'Remove') }}>
+                Remove from Favorites
+              </Button> :
+              <Button variant='success' onClick={() => { this.addFavorite(movie._id, 'Add') }}>
+                Add to Favorites
+              </Button>
+          }
         </Card.Body>
       </Card>
     );

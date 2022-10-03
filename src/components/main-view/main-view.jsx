@@ -24,6 +24,7 @@ export class MainView extends React.Component {
       selectedMovie: null,
       user: null,
       favoriteMovies: [],
+      Title: "",
     };
   }
   componentDidMount() {
@@ -44,7 +45,7 @@ export class MainView extends React.Component {
 
   onLoggedIn(authData) {
     const { Username, Email, Birthday, FavoriteMovies } = authData.user;
-    console.log(authData);
+
     this.setState({
       user: authData.user.Username,
       email: Email,
@@ -58,6 +59,36 @@ export class MainView extends React.Component {
     localStorage.setItem('email', Email);
     localStorage.setItem('favoriteMovies', FavoriteMovies);
     this.getMovies(authData.token);
+
+    this.getTitleList(FavoriteMovies);
+  }
+
+  getMovieTitle(movieId) {
+    const token = localStorage.getItem('token');
+    axios.get(`https://movie-scout.herokuapp.com/movies/${movieId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(response => {
+        let favList = localStorage.getItem('favList');
+        if (favList == null) {
+          localStorage.setItem('favList', response.data.Title);
+        } else {
+          localStorage.setItem('favList', `${favList}, ${response.data.Title}`);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  getTitleList(favoriteMovies) {
+    if (!favoriteMovies.length > 0) {
+      localStorage.setItem('favList', "No Favorite Movies");
+    } else {
+      favoriteMovies.forEach(movieId => {
+        this.getMovieTitle(movieId)
+      });
+    }
   }
 
   onRegistration(registered) {
