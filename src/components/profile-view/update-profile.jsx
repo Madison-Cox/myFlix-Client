@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Col, Container, Button, Card, Row, Form } from 'react-bootstrap';
-
+import './profile-view.scss';
 
 
 export class UpdateView extends React.Component {

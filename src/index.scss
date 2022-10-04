@@ -1,5 +1,9 @@
 $color: steelblue;
 
+.background {
+  background-image: url('./img/background.jpg')
+}
+
 body {
   height: 97vh;
 }
@@ -7,11 +11,6 @@ body {
 .my-flix {
   color: $color;
 }
-
-.background {
-  background-color: #29468a;
-}
-
 
 .form-label {
   font-size: larger;
@@ -76,4 +75,9 @@ img {
 
 .label {
   font-weight: 500;
+}
+
+.card {
+  height: 574.23px;
+  width: 395px;
 }
