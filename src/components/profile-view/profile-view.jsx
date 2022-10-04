@@ -5,12 +5,7 @@ import { Button, Container, Card } from 'react-bootstrap';
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      Title: "No Favorite Movies"
-    };
-  }
+
 
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
@@ -29,11 +24,8 @@ export class ProfileView extends React.Component {
   };
 
   onDeleteUser() {
-    const Username = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-
-    axios.delete(`https://movie-scout.herokuapp.com/users/${Username}`, {
-      headers: { Authorization: `Bearer ${token}` },
+    axios.delete(`https://movie-scout.herokuapp.com/users/${localStorage.getItem('user')}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
       .then((response) => {
         console.log(response);
@@ -47,20 +39,16 @@ export class ProfileView extends React.Component {
       });
   };
 
-  stringifyDate(birthday) {
-    const date = new Date(birthday);
-    return date.toDateString("MM/DD/YYYY");
-  }
 
   render() {
     const { user, birthday, email, favList } = localStorage;
     return (
       <Container>
 
-        <Card className='profile-view'>
+        <Card className='profile-view' >
           <Card.Body>Username: {user}</Card.Body>
           <Card.Body>Email: {email}</Card.Body>
-          <Card.Body>Birthday: {this.stringifyDate(birthday)}</Card.Body>
+          <Card.Body>Birthday: {birthday}</Card.Body>
           <Card.Body>Favorite Movies: {favList}
           </Card.Body>
 

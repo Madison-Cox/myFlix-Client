@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './movie-view.scss';
+
 export class MovieView extends React.Component {
 
   componentDidMount() {
@@ -88,7 +90,7 @@ export class MovieView extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card>
+      <Card className='movie-view'>
         <Card.Img variant='top' crossOrigin='anonymous' src={movie.ImagePath} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>

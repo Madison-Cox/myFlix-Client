@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Container, Form, Button, Card, CardGroup } from 'react-bootstrap';
 import axios from 'axios';
-
+import './login-view.scss';
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -52,7 +52,7 @@ export function LoginView(props) {
       <Row>
         <Col>
           <CardGroup>
-            <Card>
+            <Card className='login-view'>
               <Card.Body>
                 <Card.Title>Please Login</Card.Title>
                 <Form>

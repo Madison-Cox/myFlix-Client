@@ -1,6 +1,109 @@
+.card.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  width: fit-content;
+  height: fit-content;
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 500;
+  text-align: center;
+}
 
+.card-body {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 250px;
+  width: 300px;
+}
 
+.card-group {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+  height: 300px;
+}
 
+.login-view.card {
+  width: 300px;
+  height: 300px;
+}
+.btn {
+  border-radius: 8px;
+  color: blue;
+}
+
+img {
+  height: 574.23px;
+}
+.movie-view.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: fit-content;
+}
+.dir-view {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+}
+.genre-view {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+}
+.profile-view.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+}
+
+.update.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+}
+body {
+  background-color: #254379;
+  width: 100%;
+  height: 100vh;
+}
+
+.col-md-3 {
+  min-height: 250px;
+}
+.background {
+  background-image: url("background.6670ba19.jpg");
+}
 
 body {
   height: 97vh;
@@ -8,10 +111,6 @@ body {
 
 .my-flix {
   color: steelblue;
-}
-
-.background {
-  background-color: #29468a;
 }
 
 .form-label {
@@ -76,5 +175,10 @@ img {
 
 .label {
   font-weight: 500;
+}
+
+.card {
+  height: 574.23px;
+  width: 395px;
 }
 /*# sourceMappingURL=index.011f33b6.css.map */

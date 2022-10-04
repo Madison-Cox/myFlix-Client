@@ -11,6 +11,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { UpdateView } from '../profile-view/update-profile';
+import './main-view.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -134,7 +135,7 @@ export class MainView extends React.Component {
               if (movies.length === 0) return <div className='main-view' />;
 
               return movies.map(m => (
-                <Col md={3} key={m._id}>
+                <Col md={3} lg={3} key={m._id}>
                   <MovieCard movie={m} />
                 </Col>
               ))
