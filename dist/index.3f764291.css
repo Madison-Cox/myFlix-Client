@@ -57,6 +57,10 @@ body {
   align-content: center;
   height: fit-content;
 }
+
+.card-body {
+  height: fit-content;
+}
 .dir-view {
   margin: 0 auto;
   float: none;
@@ -96,10 +100,6 @@ body {
   background-color: #254379;
   width: 100%;
   height: 100vh;
-}
-
-.col-md-3 {
-  min-height: 250px;
 }
 .background {
   background-image: url("background.6670ba19.jpg");
@@ -180,5 +180,9 @@ img {
 .card {
   height: 574.23px;
   width: 395px;
+}
+
+div.container {
+  max-width: 1500px;
 }
 /*# sourceMappingURL=index.3f764291.css.map */
