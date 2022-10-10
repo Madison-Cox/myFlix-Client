@@ -1,26 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Card, Button, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { MovieCard } from '../movie-card/movie-card';
+
 import './director-view.scss';
 
-
 export class DirectorView extends React.Component {
+
+
+
   render() {
-    const { director, movie, onBackClick } = this.props;
+    const { Director, directorMovies } = this.props;
 
     return (
-      <Card className='dir-view'>
-        <Card.Header className='dir-view-header'> {director.Director.Name} </Card.Header>
-        <Card.Body>Bio: {director.Director.Bio}</Card.Body>
-        <Card.Body>Birth: {director.Director.Birth}</Card.Body>
-        <Card.Footer>
-          <Link to={`/`}>
-            <Button variant='link'>Back</Button>
-          </Link>
-        </Card.Footer>
-      </Card>
+      <Container>
+        <Card className='dir-view'>
+          <Card.Header className='dir-view-header'> {Director.Name} </Card.Header>
+          <Card.Body>Bio: <br />{Director.Bio}</Card.Body>
+          <Card.Body>Birth: {Director.Birth}</Card.Body>
+          <Card.Footer>
+            <Link to={`/`}>
+              <Button variant='link'>Back</Button>
+            </Link>
+          </Card.Footer>
+        </Card>
+        <Row className="justify-content mt-3 director-cardView">
+          {directorMovies.map((m) => (
+            <MovieCard key={m._id} movie={m}></MovieCard>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }

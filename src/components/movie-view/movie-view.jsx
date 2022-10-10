@@ -44,9 +44,11 @@ export class MovieView extends React.Component {
       })
       .then((response) => {
         if (localStorage.favList.includes(movie.Title)) { //do nothing
-        } else if (localStorage.favList.length > 0) {
+        } else if (localStorage.favList.includes("No Favorite Movies")) {
+          localStorage.setItem('favList', `${movie.Title}`);
+        } else {
           localStorage.setItem('favList', `${localStorage.favList}, ${movie.Title}`);
-        } else { localStorage.setItem('favList', `${movie.Title}`); }
+        }
         const data = response.data;
         console.log(data);
         alert('Movie added from favorites.');
@@ -69,11 +71,15 @@ export class MovieView extends React.Component {
             if (el != null && el != " ") return el.trim();
           });
           let newString = "";
-          for (let i = 0; i < cleaned.length; i++) {
-            if (i == 0) {
-              newString = cleaned[i].toString();
-            } else {
-              newString = `${newString}, ${cleaned[i]}`;
+          if (cleaned.length === 0) {
+            newString = "No Favorite Movies";
+          } else {
+            for (let i = 0; i < cleaned.length; i++) {
+              if (i == 0) {
+                newString = cleaned[i].toString();
+              } else {
+                newString = `${newString}, ${cleaned[i]}`;
+              }
             }
           }
 

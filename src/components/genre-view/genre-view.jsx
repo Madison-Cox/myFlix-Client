@@ -1,32 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Container, Button, Row, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './genre-view.scss';
 
+import { MovieCard } from '../movie-card/movie-card';
 
-export class GenreView extends React.Component {
-  render() {
-    const { Genre, onBackClick } = this.props;
-
-    return (
-      <Card className='genre-view'>
-        <Card.Header className='genre-view-header'> {Genre.Name} </Card.Header>
-        <Card.Body>Description: {Genre.Description}</Card.Body>
+export function GenreView({ genre, genreMovies }) {
+  return (
+    <Container>
+      <Card>
+        <h1>{genre.Name}</h1>
+        <p></p>
+        <h5>Description</h5>
+        <p>{genre.Description}</p>
         <Card.Footer>
           <Link to={`/`}>
             <Button variant='link'>Back</Button>
           </Link>
         </Card.Footer>
       </Card>
-    );
-  }
-}
+      <Row className="justify-content mt-3 director-cardView">
+        {genreMovies.map((m) => (
+          <MovieCard key={m._id} movie={m}></MovieCard>
+        ))}
+      </Row>
 
-GenreView.proptypes = {
-  Genre: PropTypes.shape({
-    Name: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-  }).isRequired,
-};
+    </Container>
+  );
+}
