@@ -1,0 +1,184 @@
+.btn {
+  border-radius: 8px;
+  color: blue;
+}
+
+img {
+  height: 574.23px;
+}
+.card.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  width: fit-content;
+  height: fit-content;
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.card-body {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 250px;
+  width: 300px;
+}
+
+.card-group {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+  height: 300px;
+}
+
+.login-view.card {
+  width: 300px;
+  height: 300px;
+}
+.movie-view.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: fit-content;
+}
+.dir-view {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+}
+.genre-view {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+}
+.profile-view.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+}
+
+.update.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+}
+body {
+  background-color: #254379;
+  width: 100%;
+  height: 100vh;
+}
+
+.col-md-3 {
+  min-height: 250px;
+}
+.background {
+  background-image: url("background.6670ba19.jpg");
+}
+
+body {
+  height: 97vh;
+}
+
+.my-flix {
+  color: steelblue;
+}
+
+.form-label {
+  font-size: larger;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+img {
+  max-width: auto;
+  max-height: auto;
+}
+
+button {
+  border-radius: 8px;
+  background-color: black;
+  transition-duration: 0.4s;
+  color: white;
+}
+
+button:hover {
+  border-radius: 4px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 667px;
+  max-height: auto;
+  color: #707171;
+}
+
+.movie-poster {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1667px;
+  max-height: auto;
+  color: gray;
+}
+
+.movie-title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  background-color: lightgray;
+  max-width: 667px;
+}
+
+.movie-description {
+  max-width: 667px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  background-color: lightgray;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.card {
+  height: 574.23px;
+  width: 395px;
+}
+/*# sourceMappingURL=index.3f764291.css.map */
