@@ -2,6 +2,7 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
+  "main": "src/index.html",
   "scripts": {
     "build": "babel --presets es2015 es6 -d es5"
   },
@@ -17,6 +18,7 @@
   "homepage": "https://github.com/Madison-Cox/myFlix-client#readme",
   "dependencies": {
     "axios": "^0.27.2",
+    "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
