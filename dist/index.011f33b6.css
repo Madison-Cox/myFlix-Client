@@ -40,14 +40,6 @@ body {
   width: 300px;
   height: 300px;
 }
-.btn {
-  border-radius: 8px;
-  color: blue;
-}
-
-img {
-  height: 574.23px;
-}
 .movie-view.card {
   margin: 0 auto;
   float: none;
@@ -100,6 +92,14 @@ body {
 
 .col-md-3 {
   min-height: 250px;
+}
+.btn {
+  border-radius: 8px;
+  color: blue;
+}
+
+img {
+  height: 574.23px;
 }
 .background {
   background-image: url("background.6670ba19.jpg");
