@@ -2,8 +2,10 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
+  "default": "src/index.html",
   "scripts": {
-    "build": "babel --presets es2015 es6 -d es5"
+    "dev": "parcel index.html",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
