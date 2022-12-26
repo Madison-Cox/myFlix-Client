@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import moviesApp from './reducers/reducers';
 import MainView from './components/main-view/main-view';
 import { Container } from 'react-bootstrap';
-<script type="module" src="index.html"></script>
+<script type="text" src="index.html"></script>
 
 import './index.scss';
 
